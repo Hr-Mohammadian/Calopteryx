@@ -1,3 +1,4 @@
+                   ***Modular Monolith | CQRS | Repository | Event-Driven | Audit | Specification | Policy Authorization***
 ![Caloptery-log-text](https://user-images.githubusercontent.com/27955954/225509012-410f6523-9ac6-403a-87ce-9ee90d6a6941.png)
 
 **How to start the solution?**
