@@ -1,0 +1,14 @@
+{
+  "SwaggerSettings": {
+    "Enable": true,
+    "Title": "Calopteryx",
+    "Version": "v1",
+    "Description": "Opinionated Modular Monolith Asp.net Api",
+    "ContactName": "",
+    "ContactEmail": "",
+    "ContactUrl": "",
+    "License": false,
+    "LicenseName": "",
+    "LicenseUrl": ""
+  }
+}

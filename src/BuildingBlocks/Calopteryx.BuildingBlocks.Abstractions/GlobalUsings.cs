@@ -1,0 +1,12 @@
+global using Calopteryx.BuildingBlocks.Abstractions.Domain.Contracts;
+global using System;
+global using Ardalis.Specification;
+global using FluentValidation;
+global using System.Collections.Generic;
+global using System.Threading.Tasks;
+global using MediatR;
+global using Microsoft.Extensions.Localization;
+global using System.Threading;
+global using System.Linq;
+global using Calopteryx.BuildingBlocks.Abstractions.Validation;
+global using DefaultIdType = System.Guid;

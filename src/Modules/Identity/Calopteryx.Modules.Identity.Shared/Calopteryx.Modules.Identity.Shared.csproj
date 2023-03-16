@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Calopteryx.BuildingBlocks.Infrastructures\Calopteryx.BuildingBlocks.Infrastructures.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="RoleClaims\Events" />
+    <Folder Include="Roles\Filters" />
+    <Folder Include="Tokens\Dto" />
+    <Folder Include="Tokens\Events" />
+    <Folder Include="Users\Filters" />
+  </ItemGroup>
+
+</Project>

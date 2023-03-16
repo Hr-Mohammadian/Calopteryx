@@ -1,0 +1,10 @@
+{
+  "MailSettings": {
+    "DisplayName": "Calopteryx",
+    "From": "info@calopteryx.com",
+    "Host": "sandbox.smtp.mailtrap.io",
+    "Password": "",
+    "Port": 587,
+    "UserName": ""
+  }
+}

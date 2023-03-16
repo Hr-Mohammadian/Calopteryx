@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Calopteryx.Modules.Identity.Shared\Calopteryx.Modules.Identity.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DAL\Migrations" />
+    <Folder Include="RoleClaims\Entities" />
+    <Folder Include="Roles\Entities" />
+    <Folder Include="Roles\Responses" />
+    <Folder Include="Tokens\Entities" />
+    <Folder Include="Users\Entities" />
+    <Folder Include="Users\Responses" />
+  </ItemGroup>
+
+</Project>

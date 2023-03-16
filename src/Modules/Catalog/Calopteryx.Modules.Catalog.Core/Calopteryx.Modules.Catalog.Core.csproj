@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Calopteryx.Modules.Catalog.Shared\Calopteryx.Modules.Catalog.Shared.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Brands\Repositories" />
+      <Folder Include="Brands\Responses" />
+      <Folder Include="Brands\Services" />
+      <Folder Include="Brands\Specs" />
+      <Folder Include="DAL\Migrations" />
+      <Folder Include="DAL\Seeders" />
+      <Folder Include="Products\Queries" />
+      <Folder Include="Products\Repositories" />
+      <Folder Include="Products\Responses" />
+      <Folder Include="Products\Services" />
+    </ItemGroup>
+
+</Project>
