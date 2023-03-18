@@ -44,14 +44,14 @@ public  class IdentitiesDbContext: IdentityDbContext<ApplicationUser, Applicatio
         modelBuilder.AppendGlobalQueryFilter<ISoftDelete>(s => s.DeletedOn == null);
 
         base.OnModelCreating(modelBuilder);
-        // modelBuilder.Entity<ApplicationRole>(b =>
-        // {
-        //     // Each Role can have many associated RoleClaims
-        //     b.HasMany(e => e.RoleClaims)
-        //         .WithOne(e => e.Role)
-        //         .HasForeignKey(rc => rc.RoleId)
-        //         .IsRequired();
-        // });
+        modelBuilder.Entity<ApplicationRole>(b =>
+        {
+            // Each Role can have many associated RoleClaims
+            b.HasMany(e => e.RoleClaims)
+                .WithOne(e => e.Role)
+                .HasForeignKey(rc => rc.RoleId)
+                .IsRequired();
+        });
         modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
     }
 

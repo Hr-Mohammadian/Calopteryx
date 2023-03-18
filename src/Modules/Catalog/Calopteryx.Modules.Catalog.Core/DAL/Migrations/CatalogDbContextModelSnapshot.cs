@@ -58,59 +58,6 @@ namespace Calopteryx.Modules.Catalog.Core.DAL.Migrations
                     b.ToTable("AuditTrails", "Catalog");
                 });
 
-            modelBuilder.Entity("Calopteryx.BuildingBlocks.Infrastructures.Identity.ApplicationRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("text");
-
-                    b.Property<string>("NormalizedName")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationRole", "Catalog");
-                });
-
-            modelBuilder.Entity("Calopteryx.BuildingBlocks.Infrastructures.Identity.ApplicationRoleClaim", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("text");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("text");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("ApplicationRoleClaim", "Catalog");
-                });
-
             modelBuilder.Entity("Calopteryx.Modules.Catalog.Core.Brands.Entities.Brand", b =>
                 {
                     b.Property<Guid>("Id")
@@ -197,17 +144,6 @@ namespace Calopteryx.Modules.Catalog.Core.DAL.Migrations
                     b.ToTable("Products", "Catalog");
                 });
 
-            modelBuilder.Entity("Calopteryx.BuildingBlocks.Infrastructures.Identity.ApplicationRoleClaim", b =>
-                {
-                    b.HasOne("Calopteryx.BuildingBlocks.Infrastructures.Identity.ApplicationRole", "Role")
-                        .WithMany("RoleClaims")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Role");
-                });
-
             modelBuilder.Entity("Calopteryx.Modules.Catalog.Core.Products.Entities.Product", b =>
                 {
                     b.HasOne("Calopteryx.Modules.Catalog.Core.Brands.Entities.Brand", "Brand")
@@ -217,11 +153,6 @@ namespace Calopteryx.Modules.Catalog.Core.DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("Brand");
-                });
-
-            modelBuilder.Entity("Calopteryx.BuildingBlocks.Infrastructures.Identity.ApplicationRole", b =>
-                {
-                    b.Navigation("RoleClaims");
                 });
 #pragma warning restore 612, 618
         }

@@ -21,7 +21,7 @@
     },
     "Storage": {
       "StorageProvider": "postgresql",
-      "ConnectionString": "Host=localhost;Database=Calopteryx;Username=postgres;Password=",
+      "ConnectionString": "Host=localhost;Database=postgres;Username=postgres;Password=",
       "Options": {
         "CommandBatchMaxTimeout": "00:05:00",
         "QueuePollInterval": "00:00:01",

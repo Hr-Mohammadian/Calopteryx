@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -12,22 +11,6 @@ namespace Calopteryx.Modules.Catalog.Core.DAL.Migrations
         {
             migrationBuilder.EnsureSchema(
                 name: "Catalog");
-
-            migrationBuilder.CreateTable(
-                name: "ApplicationRole",
-                schema: "Catalog",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: true),
-                    NormalizedName = table.Column<string>(type: "text", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApplicationRole", x => x.Id);
-                });
 
             migrationBuilder.CreateTable(
                 name: "AuditTrails",
@@ -70,31 +53,6 @@ namespace Calopteryx.Modules.Catalog.Core.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ApplicationRoleClaim",
-                schema: "Catalog",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    CreatedBy = table.Column<string>(type: "text", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    RoleId = table.Column<string>(type: "text", nullable: false),
-                    ClaimType = table.Column<string>(type: "text", nullable: true),
-                    ClaimValue = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ApplicationRoleClaim", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ApplicationRoleClaim_ApplicationRole_RoleId",
-                        column: x => x.RoleId,
-                        principalSchema: "Catalog",
-                        principalTable: "ApplicationRole",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Products",
                 schema: "Catalog",
                 columns: table => new
@@ -125,12 +83,6 @@ namespace Calopteryx.Modules.Catalog.Core.DAL.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApplicationRoleClaim_RoleId",
-                schema: "Catalog",
-                table: "ApplicationRoleClaim",
-                column: "RoleId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Products_BrandId",
                 schema: "Catalog",
                 table: "Products",
@@ -140,19 +92,11 @@ namespace Calopteryx.Modules.Catalog.Core.DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ApplicationRoleClaim",
-                schema: "Catalog");
-
-            migrationBuilder.DropTable(
                 name: "AuditTrails",
                 schema: "Catalog");
 
             migrationBuilder.DropTable(
                 name: "Products",
-                schema: "Catalog");
-
-            migrationBuilder.DropTable(
-                name: "ApplicationRole",
                 schema: "Catalog");
 
             migrationBuilder.DropTable(
